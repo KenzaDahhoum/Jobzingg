@@ -11,11 +11,20 @@ const routes = [
     component: Dashboard
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/Job',
+    name: 'Job',
+    component: ()=> import('../views/Job.vue')
     
-  }
+  },
+  {
+    path: '/Client',
+    name: 'Client',
+    component: ()=> import('../views/Client.vue')
+    
+  },
+  
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
