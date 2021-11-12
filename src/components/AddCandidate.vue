@@ -6,7 +6,7 @@
          </template>
       <v-card>
           <v-card-title>
-              <h2>Create Client</h2>
+              <h2>Create Candidate</h2>
           </v-card-title>
           <v-card-text > 
               <v-form class="px-3" ref="form"> 
@@ -14,7 +14,7 @@
                 <v-select :items="items" label="Phone Number" prepend-icon="mdi-phone"  :rules="inputRules"></v-select>
                 <v-text-field label="Email Adress"  prepend-icon="mdi-email" :rules="emailRules"></v-text-field>
                 <v-text-field label="Location"  prepend-icon="mdi-map-marker" :rules="inputRules"></v-text-field>
-                <v-textarea label="Job Description"  prepend-icon="mdi-text"></v-textarea>
+                <v-textarea label=" Description"  prepend-icon="mdi-text"></v-textarea>
                 <v-btn  text color="#22c3bb" type="submit" class="mx-0 mt-3 mr-3">Contenue</v-btn>
                 <v-btn class="mx-0 mt-3" @click="dialog =false">Cancel</v-btn>
               </v-form>
