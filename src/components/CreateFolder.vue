@@ -21,8 +21,7 @@
     </v-dialog>
     </div>
  </template>
-
-<script>
+<script >
 export default {
     data(){
         

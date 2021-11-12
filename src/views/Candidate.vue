@@ -11,7 +11,6 @@
          </v-btn>
         </v-flex>
       </v-col>
-      
          <v-col lg="5" cols="12"  class="d-flex flex-row-reverse">
         <v-menu offset-y >
       <template v-slot:activator="{ on, attrs }" >

@@ -3,7 +3,7 @@
 <v-row>
      <v-col lg="12" >
         <v-flex class="d-inline-flex"> 
-          <h2>ALL Folders</h2>
+          <h2> ALL Folders</h2>
           <CreateFolder class="ml-1 mt-1"/>
         </v-flex>
         </v-col>
