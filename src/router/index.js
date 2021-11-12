@@ -22,6 +22,18 @@ const routes = [
     component: ()=> import('../views/Client.vue')
     
   },
+  {
+    path: '/Candidate',
+    name: 'Candidate',
+    component: ()=> import('../views/Candidate.vue')
+    
+  },
+  {
+    path: '/Folder',
+    name: 'Folder',
+    component: ()=> import('../views/Folder.vue')
+    
+  },
   
 ]
 
