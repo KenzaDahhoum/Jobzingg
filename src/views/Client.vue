@@ -1,14 +1,19 @@
 <template>
   <div>
+    <v-snackbar v-model="snackbar" dense text type="success" :timeout="3000" top color="success">
+      <strong>Client added </strong>successfully
+      <v-icon color="success">
+        mdi-checkbox-marked-circle
+      </v-icon>
+    </v-snackbar>
     <v-row>
       <v-col lg="12" >
         <v-flex class="d-inline-flex"> 
-          <h1>Clients </h1>
-          <AddClient class="ml-1 mt-3"/>
+          <h2>Clients </h2>
+          <AddClient class="ml-1 mt-1"
+          @clientAdded="snackbar=true"/>
         </v-flex>
-       
       </v-col>
-      
          <v-col lg="5" cols="12"  class="d-flex flex-row-reverse">
         <v-menu offset-y >
       <template v-slot:activator="{ on, attrs }" >
@@ -32,91 +37,61 @@
       </v-list>
      </v-menu>
       </v-col>
-   
       <v-col>
-        <v-btn class="ref" color="#22c3bb"> <v-icon>mdi-refresh</v-icon>Refresh</v-btn>
+        <v-btn small class="ref"  color="#22c3bb"><v-icon>mdi-refresh</v-icon>Refresh</v-btn>
       </v-col>
       <v-col>
-        <v-btn class="fil" color="#22c3bb"> <v-icon>mdi-filter-variant</v-icon>Filters</v-btn>
+        <v-btn small class="fil" color="#22c3bb"><v-icon>mdi-filter-variant</v-icon>Filters</v-btn>
       </v-col>
 
     </v-row>
     <v-row>
        <v-col lg="12">
-         <v-data-table
-               caption="" 
-               :headers="headers"
-               :icon="icon"
-               :items="desserts"
-               :items-per-page="5"
-                 class="elevation-1"
-        >
-        
-        </v-data-table>
-
+         <v-data-table  caption="" :headers="headers" :items="clients" :items-per-page="ALL" class="elevation-19">
+         </v-data-table>
        </v-col>
+  
      </v-row>
+  
   </div>
+
 </template>
 <script>
 import   AddClient from '../components/AddClient.vue';
+import axios from "axios";
 export default {
   components: { AddClient },
   name: "Job",
   data() {
     return {
+      snackbar:false,
+      
       menus: [
         { title: "Edit", icon: "mdi-pencil" },
         { title: "Export", icon: "mdi-tray-arrow-down" },
       ],
 
       headers: [
-        { text: "Client Name", value: "name" , icon:"eye-outline"},
-        { text: "Job Count", value: "calories" },
-        { text: "Client Industry", value: "fat" },
-        { text: "Client Location", value: "carbs" },
-        { text: "Client stage", value: "protein" },
-        { text: "Client Owner", value: "iron" },
-        { text: "Client Team", value: "iron" },
-        { text: "Client Adress", value: "iron" },
+        { text: "Client Name", value: "client_name"},
+        { text: "Job Count", value: "" },
+        { text: "Client Industry", value: "" },
+        { text: "Client Location", value: "location" },
+        { text: "Client stage", value: "" },
+        { text: "Client Owner", value: "" },
+        { text: "Client Team", value: "" },
+        { text: "Client Adress", value: "" },
        
       ],
-      desserts: [
-        {
-          name: "Frozen Yogurt",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: "1%",
-        },
-        {
-          name: "Ice cream sandwich",
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: "1%",
-        },
-        {
-          name: "Eclair",
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: "7%",
-        },
-        {
-          name: "Cupcake",
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: "8%",
-        },
-      ],
+      clients: [],
     };
   },
+  created(){
+    axios.get("http://localhost:3000/Client")
+  .then(response =>{
+    this.clients = response.data;
+    console.log(this.clients)
+  })
+  }
 };
 </script>
 
@@ -127,7 +102,7 @@ export default {
   border: 0;
   text-decoration: none;
   line-height: 17px;
-  margin-left: 50%;
+  margin-left: 40%;
   margin-right: 0px;
  justify-content: end;
 };
@@ -144,7 +119,7 @@ export default {
   text-decoration: none;
   line-height: 17px;
   margin-left: 110%;
-  margin-right: 10px;
+  margin-right: 0px;
   justify-content: end;
 
 };

@@ -1,10 +1,17 @@
 <template>
   <div>
+      <v-snackbar v-model="snackbar" dense text type="success" :timeout="3000" top color="success">
+      <strong>Candidate added </strong>successfully
+      <v-icon color="success">
+        mdi-checkbox-marked-circle
+      </v-icon>
+    </v-snackbar>
     <v-row>
       <v-col lg="12" >
         <v-flex class="d-inline-flex"> 
           <h2>Candidates</h2>
-          <AddCandidate class="ml-1 mt-1"/>
+          <AddCandidate class="ml-1 mt-1"
+          @candidateAdded="snackbar=true"/>
          <v-btn  text  to="/Folder" depressed  class="ml-2 mt-0">
          <v-icon left color="#22c3bb" >mdi-folder</v-icon>
          <span class="p-3">Folder</span>
@@ -39,7 +46,7 @@
         <v-btn class="ref" color="#22c3bb"> <v-icon>mdi-refresh</v-icon>Refresh</v-btn>
       </v-col>
       <v-col>
-        <v-btn class="fil" color="#22c3bb"> <v-icon>mdi-filter-variant</v-icon>Filters</v-btn>
+        <v-btn class="fil" color="#22c3bb" type="submit"> <v-icon>mdi-filter-variant</v-icon>Filters</v-btn>
       </v-col>
 
     </v-row>
@@ -48,10 +55,9 @@
          <v-data-table
                caption="" 
                :headers="headers"
-               :icon="icon"
-               :items="desserts"
+               :items="candidate"
                :items-per-page="5"
-                 class="elevation-1"
+                 class="elevation-19"
         >
         
         </v-data-table>
@@ -65,65 +71,42 @@
 </template>
 <script>
 import AddCandidate from '../components/AddCandidate.vue';
-
+import axios from "axios";
 export default {
   components: { AddCandidate },
  
   name: "Job",
   data() {
     return {
+      snackbar:false,
       menus: [
         { title: "Edit", icon: "mdi-pencil" },
         { title: "Export", icon: "mdi-tray-arrow-down" },
       ],
 
       headers: [
-        { text: "Client Name", value: "name" , icon:"eye-outline"},
-        { text: "Job Count", value: "calories" },
-        { text: "Client Industry", value: "fat" },
-        { text: "Client Location", value: "carbs" },
-        { text: "Client stage", value: "protein" },
-        { text: "Client Owner", value: "iron" },
-        { text: "Client Team", value: "iron" },
-        { text: "Client Adress", value: "iron" },
+        { text: "Candidate Name", value: "candidate_name"},
+        { text: "Candidate Reference", value: "" },
+        { text: "Candidate Location", value: "location" },
+        { text: "Current position", value: "" },
+        { text: "Current Company", value: "" },
+        { text: "Notice Period", value: "" },
+        { text: "Current Salary", value: "" },
+        { text: "Expected Salary", value: "" },
+        { text: "Candidate Owner", value: "" },
        
       ],
-      desserts: [
-        {
-          name: "Frozen Yogurt",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: "1%",
-        },
-        {
-          name: "Ice cream sandwich",
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: "1%",
-        },
-        {
-          name: "Eclair",
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: "7%",
-        },
-        {
-          name: "Cupcake",
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: "8%",
-        },
-      ],
+      candidate: []
+  
     };
   },
+  created(){
+    axios.get("http://localhost:3000/Candidate")
+  .then(response =>{
+    this.candidate = response.data;
+    console.log(this.candidate)
+  })
+  }
 };
 </script>
 

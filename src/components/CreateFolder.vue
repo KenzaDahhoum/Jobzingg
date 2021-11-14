@@ -12,27 +12,54 @@
               <v-form class="px-3" ref="form"> 
                 <v-text-field label="Name" :rules="inputRules"></v-text-field>
                 <v-textarea label="Description"  ></v-textarea>
-                <v-btn  text color="#22c3bb" type="submit" class="mx-0 mt-3 mr-3">Save</v-btn>
+                <v-btn  text color="#22c3bb" @click="submit" class="mx-0 mt-3 mr-3">Save</v-btn>
                 <v-btn text class="mx-0 mt-3" @click="dialog =false">Cancel</v-btn>
               </v-form>
           </v-card-text>
-         
+
       </v-card>
     </v-dialog>
     </div>
  </template>
 <script >
+    import axios from "axios";
 export default {
     data(){
         
       return{
+          name:"",
+          description:"",
     
       dialog: false,
       inputRules:[ value => !!value || 'Required.',
                  value => (value && value.length >= 3) || 'Min 3 characters',]
             }
-        }
+        },
+      methods:{
+           submit() {
+      if (this.name == "" || this.description == "") {
+        return this.inputRules;
+      } else {
+        axios
+          .post("http://localhost:3000/Folders", {
+            folder_name: this.name,
+            location: this.location,
+           
+          })
+          .then((res) => {
+            console.log(res);
+          });
+          this.dialog=false,
+         this.name= "",
+         this.location="",
+
+        this.$emit("folderAdded");
+         
+      }
+    },
+      }
 }
 </script>
-
+<style scoped>
+</style>
     

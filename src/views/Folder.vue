@@ -1,10 +1,17 @@
 <template>
  <div>
+   <v-snackbar v-model="snackbar" dense text type="success" :timeout="3000" top color="success">
+      <strong>Folder added </strong>successfully
+      <v-icon color="success">
+        mdi-checkbox-marked-circle
+      </v-icon>
+    </v-snackbar>
 <v-row>
      <v-col lg="12" >
         <v-flex class="d-inline-flex"> 
           <h2> ALL Folders</h2>
-          <CreateFolder class="ml-1 mt-1"/>
+          <CreateFolder class="ml-1 mt-1"
+          @folderAdded="snackbar=true"/>
         </v-flex>
         </v-col>
 </v-row>
@@ -23,9 +30,9 @@
       <tbody>
         <tr
           v-for="folder in Folders"
-          :key="folder.name"
+          :key="folder.id"
         >
-          <td>{{ folder.name }}</td>
+          <td>{{ folder.folder_name }}</td>
           <td>{{ folder.Owner }}</td>
         </tr>
       </tbody>
@@ -34,20 +41,25 @@
  </div>
 </template>
 <script>
+import axios from "axios";
 import CreateFolder from '../components/CreateFolder.vue'
 export default {
   components: { CreateFolder },
   data(){
       return{
-          Folders:[
-              {
-               name: "Fils1",
-              Owner: "Owener1",
-              }
-             
-
-          ],
-      }
+        snackbar:false,
+        name:"",
+        description:"",
+          Folders:[],
+        }
+  },
+created(){
+    axios.get("http://localhost:3000/Folders")
+  .then(response =>{
+    this.Folders = response.data;
+    console.log(this.Folders)
+  })
   }
+
 }
 </script>
