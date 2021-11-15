@@ -15,8 +15,8 @@
                 <v-text-field label="Email Adress"  prepend-icon="mdi-email" :rules="emailRules" v-model="email"></v-text-field>
                 <v-text-field label="Location"  prepend-icon="mdi-map-marker" :rules="inputRules" v-model="location"></v-text-field>
                 <v-textarea label=" Description"  prepend-icon="mdi-text" v-model="description"></v-textarea>
-                <v-btn  text color="#22c3bb" type="submit" class="mx-0 mt-3 mr-3" @click="submit">Contenue</v-btn>
-                <v-btn class="mx-0 mt-3" text @click="dialog =false">Cancel</v-btn>
+                <v-btn  text color="#22c3bb" small type="submit" class="mx-0 mt-3 mr-3" @click="submit">Contenue</v-btn>
+                <v-btn class="mx-0 mt-3" small text @click="dialog =false">Cancel</v-btn>
               </v-form>
           </v-card-text>
          

@@ -18,12 +18,19 @@
          </v-btn>
         </v-flex>
       </v-col>
-         <v-col lg="5" cols="12"  class="d-flex flex-row-reverse">
+     <div class="text-center">
+     <v-col>
+        <v-btn small class="mr-1" outlined  color="#22c3bb"><v-icon>mdi-refresh</v-icon>Refresh</v-btn>
+      </v-col>
+      <v-col>
+        <CandidateFilter class="mr-1"/>
+      </v-col>
+      <v-col lg="5" cols="12"  class="d-flex flex-row-reverse">
         <v-menu offset-y >
       <template v-slot:activator="{ on, attrs }" >
         <span  
           v-bind="attrs" v-on="on" style="cursor: pointer" >
-          <v-chip link color="#22c3bb" class="act">
+          <v-chip link color="#22c3bb">
     
                 <span class="act">Actions</span>
             </v-chip>         
@@ -41,13 +48,7 @@
       </v-list>
      </v-menu>
       </v-col>
-   
-      <v-col>
-        <v-btn class="ref" color="#22c3bb"> <v-icon>mdi-refresh</v-icon>Refresh</v-btn>
-      </v-col>
-      <v-col>
-        <v-btn class="fil" color="#22c3bb" type="submit"> <v-icon>mdi-filter-variant</v-icon>Filters</v-btn>
-      </v-col>
+      </div>
 
     </v-row>
     <v-row>
@@ -70,10 +71,11 @@
 
 </template>
 <script>
+import CandidateFilter from '../components/CandidateFilter.vue';
 import AddCandidate from '../components/AddCandidate.vue';
 import axios from "axios";
 export default {
-  components: { AddCandidate },
+  components: { AddCandidate ,CandidateFilter },
  
   name: "Job",
   data() {
@@ -111,33 +113,27 @@ export default {
 </script>
 
 <style scoped>
-.fil{
-  display: flex;
+
+.text-center{
+ display: flex;
   flex-direction: row;
-  border: 0;
+  border: 1;
   text-decoration: none;
   line-height: 17px;
-  margin-left: 50%;
-  margin-right: 0px;
+  margin-left: 60%;
+  margin-right: 0%;
  justify-content: end;
 };
-@media(max-width: 768px){
+@media(max-width:1025px){
     .fil{
         margin: calc(.8rem * 1);
     }
-
+    
 };
+@media(max-width:1025px){
+    .ref{
+        margin: calc(.8rem * 1);
+    }
 
-.ref{
-  display:flex;
-  flex-direction: row;
-  border: 0;
-  text-decoration: none;
-  line-height: 17px;
-  margin-left: 110%;
-  margin-right: 10px;
-  justify-content: end;
-
-};
-
+}
 </style>

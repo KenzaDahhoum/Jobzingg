@@ -14,7 +14,14 @@
           @clientAdded="snackbar=true"/>
         </v-flex>
       </v-col>
-         <v-col lg="5" cols="12"  class="d-flex flex-row-reverse">
+      <div class="text-center">
+     <v-col>
+        <v-btn small class="mr-1" outlined  color="#22c3bb"><v-icon>mdi-refresh</v-icon>Refresh</v-btn>
+      </v-col>
+      <v-col>
+        <ClientFilter class="mr-1"/>
+      </v-col>
+       <v-col lg="5" cols="12"  class="d-flex flex-row-reverse">
         <v-menu offset-y >
       <template v-slot:activator="{ on, attrs }" >
         <span  
@@ -37,17 +44,11 @@
       </v-list>
      </v-menu>
       </v-col>
-      <v-col>
-        <v-btn small class="ref"  color="#22c3bb"><v-icon>mdi-refresh</v-icon>Refresh</v-btn>
-      </v-col>
-      <v-col>
-        <v-btn small class="fil" color="#22c3bb"><v-icon>mdi-filter-variant</v-icon>Filters</v-btn>
-      </v-col>
-
+      </div>
     </v-row>
     <v-row>
        <v-col lg="12">
-         <v-data-table  caption="" :headers="headers" :items="clients" :items-per-page="ALL" class="elevation-19">
+         <v-data-table  caption="" :headers="headers" :items="clients" :items-per-page="5" class="elevation-19">
          </v-data-table>
        </v-col>
   
@@ -59,8 +60,9 @@
 <script>
 import   AddClient from '../components/AddClient.vue';
 import axios from "axios";
+import ClientFilter from '../components/ClientFilter.vue'
 export default {
-  components: { AddClient },
+  components: { AddClient , ClientFilter },
   name: "Job",
   data() {
     return {
@@ -96,39 +98,16 @@ export default {
 </script>
 
 <style scoped>
-.fil{
-  display: flex;
+
+.text-center{
+ display: flex;
   flex-direction: row;
-  border: 0;
+  border: 1;
   text-decoration: none;
   line-height: 17px;
-  margin-left: 40%;
-  margin-right: 0px;
+  margin-left: 60%;
+  margin-right: 0%;
  justify-content: end;
 };
-@media(max-width:1025px){
-    .fil{
-        margin: calc(.8rem * 1);
-    }
-
-}
-.ref{
-  display:flex;
-  flex-direction: row;
-  border: 0;
-  text-decoration: none;
-  line-height: 17px;
-  margin-left: 110%;
-  margin-right: 0px;
-  justify-content: end;
-
-};
-@media(max-width:1025px){
-    .ref{
-        margin: calc(.8rem * 1);
-    }
-
-}
-
 
 </style>

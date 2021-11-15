@@ -105,6 +105,14 @@
       "email_adress": "kenza.dahhoum@gmail.com",
       "description": "ddd",
       "id": "IUBGdFT"
+    },
+    {
+      "candidate_name": "kenza",
+      "phone_number": "+42",
+      "location": "mmmm",
+      "email_adress": "kenzadahhoum2000@gmail.com",
+      "description": "",
+      "id": "RfkmGz1"
     }
   ],
   "Job": [
@@ -118,13 +126,40 @@
       "Maximum_Salary": "6000 dh",
       "Minimum_Salary": "3000 dh",
       "Job_description": ""
+    },
+    {
+      "id": "2",
+      "position_name": "vuejs developpers",
+      "Client": "khalid",
+      "location": "france",
+      "headacount": "3",
+      "contract_details": "CDD",
+      "Maximum_Salary": "6000 dh",
+      "Minimum_Salary": "3000 dh",
+      "Job_description": ""
+    },
+    {
+      "position_name": "bbbb",
+      "Client": "Stage",
+      "location": "dddd",
+      "headacount": "4",
+      "contract_details": "CDI",
+      "Maximum_Salary": "4500",
+      "Minimum_Salary": "2500",
+      "Job_description": "",
+      "id": "lk-pNht"
     }
   ],
-  "Folders":[
+  "Folders": [
     {
-      "id":"1",
-      "folder_name":"fils2",
-      "description":""
+      "id": "1",
+      "folder_name": "fils2",
+      "description": ""
+    },
+    {
+      "id": "2",
+      "folder_name": "fils3",
+      "description": ""
     }
   ]
 }

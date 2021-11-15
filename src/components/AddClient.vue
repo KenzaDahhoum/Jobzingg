@@ -16,8 +16,8 @@
             <v-text-field label="Website" prepend-icon="mdi-web" v-model="website" :rules="inputRules"></v-text-field>
             <v-text-field label="Location" prepend-icon="mdi-map-marker" :rules="inputRules" v-model="location"></v-text-field>
             <v-textarea label="Description" prepend-icon="mdi-text" v-model="description"></v-textarea>
-            <v-btn color="#22c3bb" class="mx-0 mt-3 mr-3"  @click="submit">Contenue</v-btn>
-            <v-btn class="mx-0 mt-3" @click="dialog = false">Cancel</v-btn>
+            <v-btn color="#22c3bb" text small class="mx-0 mt-3 mr-3"  @click="submit">Contenue</v-btn>
+            <v-btn class="mx-0 mt-3" text small @click="dialog = false">Cancel</v-btn>
           </v-form>
         </v-card-text>
       </v-card>
