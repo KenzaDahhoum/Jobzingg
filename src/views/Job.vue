@@ -29,7 +29,7 @@
       <template v-slot:activator="{ on, attrs }">
         <span  
           v-bind="attrs" v-on="on" style="cursor: pointer" >
-          <v-btn  small link color="#1976d2">
+          <v-btn small link color="#1976d2">
                 <span class="sp">Actions</span>
           </v-btn>         
         </span>
@@ -52,8 +52,8 @@
        <v-col lg="12">
          <v-data-table caption="" :headers="headers" :items="jobs" :items-per-page="5" class="elevation-1" >
           <template v-slot:item="row">
-       <tr>
-          <td style="min-width: 75px">
+       <tr class="tr">
+          <td class="td">
             <v-div>
               <v-div class="layout">
                 <v-div class="align-content">
@@ -72,14 +72,14 @@
               
             </v-div>
          </td>
-            <td>{{row.item.Client}}</td>
-            <td>{{row.item.loction}}</td>
-            <td>{{row.item.headacount}}</td>
-            <td>{{row.item.Minimum_Salary}}</td>
-            <td>{{row.item.Maximun}}</td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="td">{{row.item.Client}}</td>
+            <td class="td">{{row.item.loction}}</td>
+            <td class="td">{{row.item.headacount}}</td>
+            <td class="td">{{row.item.Minimum_Salary}}</td>
+            <td class="td">{{row.item.Maximun}}</td>
+            <td class="td"></td>
+            <td class="td"></td>
+            <td class="td"></td>
        </tr>
 
           </template>
@@ -143,7 +143,7 @@ export default {
       ],
 
       headers: [
-        { text: "Position name", value: "position_name" },
+        { text: "Position name", value: "position_name",class:'sty'},
         { text: "Job Client", value: "Client" },
         { text: "Job Location", value: "loction" },
         { text: "Head Account", value: "headacount" },
@@ -242,12 +242,14 @@ export default {
   background-repeat: no-repeat;
     padding: 0;
     margin: 0;
+    
 }
 .align-content{
   width: calc(100% - 76px);
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(100%,1fr));
   align-content: center;
+  
 }
 .tool{
   display: initial;
@@ -255,6 +257,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: inherit;
+  
 }
 .cont{
     width: 26px;
@@ -262,6 +265,15 @@ export default {
     grid-template-columns: repeat(auto-fill,minmax(100%,1fr));
     align-content: center;
     flex: 1 1 auto;
+}
+.tr:nth-of-type(even){
+  background-color:#f1f4f8;
+}
+.td{
+  border-right: 1px solid #d4e0f0;
+}
+.sty{
+  background-color:#d4e0f0;
 }
 .eye{
      background: transparent;
@@ -276,7 +288,7 @@ export default {
     display: inline-flex;
     flex: 0 1 auto;
     position: relative;
-    margin-left:40px;
+    margin-left:50px;
     margin-right:-20px;
 }
 .align-act{
@@ -294,7 +306,7 @@ export default {
   vertical-align: middle;
   background-repeat: no-repeat;
     padding: 0;
-    margin-left:90%;
+    margin-left:120%;
     box-sizing: inherit;
     align-items: center;
     cursor: pointer;
