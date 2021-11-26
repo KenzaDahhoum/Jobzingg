@@ -2,7 +2,7 @@
   <div class="Popup">
     <v-dialog max-width="600px" v-model="dialog">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="#22c3bb" small icon v-on="on" v-bind="attrs"
+        <v-btn color="#1976d2" small icon v-on="on" v-bind="attrs"
           ><v-icon>mdi-plus-circle</v-icon></v-btn
         >
       </template>
@@ -16,7 +16,7 @@
             <v-text-field label="Website" prepend-icon="mdi-web" v-model="website" :rules="inputRules"></v-text-field>
             <v-text-field label="Location" prepend-icon="mdi-map-marker" :rules="inputRules" v-model="location"></v-text-field>
             <v-textarea label="Description" prepend-icon="mdi-text" v-model="description"></v-textarea>
-            <v-btn color="#22c3bb" text small class="mx-0 mt-3 mr-3"  @click="submit">Contenue</v-btn>
+            <v-btn color="#1976d2" text small class="mx-0 mt-3 mr-3"  @click="submit">Contenue</v-btn>
             <v-btn class="mx-0 mt-3" text small @click="dialog = false">Cancel</v-btn>
           </v-form>
         </v-card-text>
@@ -44,16 +44,14 @@ export default {
     };
   },
   methods: {
-    resetForm() {
-      this.form = Object.assign({}, this.defaultForm);
-      this.$refs.form.reset();
-    },
+    
     submit() {
+    
       if (this.name == "" || this.location == "") {
         return this.inputRules;
       } else {
         axios
-          .post("http://localhost:3000/folder", {
+          .post("http://localhost:3000/client",{
             client_name: this.name,
             location: this.location,
             description:this.description,
@@ -62,12 +60,13 @@ export default {
           .then((res) => {
             console.log(res);
           });
+         this.$emit('add-client');
           this.dialog=false,
-         this.name= "",
-         this.location="",
-         this.description="",
-         this.website=""
-
+          this.name= "",
+          this.location="",
+          this.description="",
+          this.website=""
+        
         this.$emit("clientAdded");
          
       }

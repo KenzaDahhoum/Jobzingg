@@ -6,11 +6,11 @@
         mdi-checkbox-marked-circle
       </v-icon>
     </v-snackbar>
-<v-row>
+<v-row  class="mt-8">
      <v-col lg="12" >
         <v-flex class="d-inline-flex"> 
           <h2> ALL Folders</h2>
-          <CreateFolder class="ml-1 mt-1"
+          <NewFolder class="ml-1 mt-1"
           @folderAdded="snackbar=true"/>
         </v-flex>
         </v-col>
@@ -42,9 +42,9 @@
 </template>
 <script>
 import axios from "axios";
-import CreateFolder from '../components/CreateFolder.vue'
+import NewFolder from '../components/NewFolder.vue';
 export default {
-  components: { CreateFolder },
+  components: { NewFolder },
   data(){
       return{
         snackbar:false,

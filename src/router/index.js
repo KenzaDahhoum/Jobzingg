@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/test',
+    name: 'test',
+    component: ()=> import('../views/test.vue')
+  },
+  {
     path: '/',
     name: 'Dashboard',
     component: Dashboard
@@ -32,6 +37,18 @@ const routes = [
     path: '/Folder',
     name: 'Folder',
     component: ()=> import('../views/Folder.vue')
+    
+  },
+  {
+    path: '/Placement',
+    name: 'Placements',
+    component: ()=> import('../views/Placement.vue')
+    
+  },
+  {
+    path: '/Activitie',
+    name: 'Activities',
+    component: ()=> import('../views/Activities.vue')
     
   },
   

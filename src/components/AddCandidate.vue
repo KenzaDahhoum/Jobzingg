@@ -2,7 +2,7 @@
     <div class="Popup">
      <v-dialog max-width="600px" v-model="dialog">
          <template v-slot:activator="{on , attrs}">
-      <v-btn  color="#22c3bb" small icon v-on="on" v-bind="attrs"><v-icon>mdi-plus-circle</v-icon></v-btn>
+      <v-btn  color="#1976d2" small icon v-on="on" v-bind="attrs"><v-icon>mdi-plus-circle</v-icon></v-btn>
          </template>
       <v-card>
           <v-card-title>
@@ -15,11 +15,11 @@
                 <v-text-field label="Email Adress"  prepend-icon="mdi-email" :rules="emailRules" v-model="email"></v-text-field>
                 <v-text-field label="Location"  prepend-icon="mdi-map-marker" :rules="inputRules" v-model="location"></v-text-field>
                 <v-textarea label=" Description"  prepend-icon="mdi-text" v-model="description"></v-textarea>
-                <v-btn  text color="#22c3bb" small type="submit" class="mx-0 mt-3 mr-3" @click="submit">Contenue</v-btn>
+                <v-btn  text color="#1976d2" small  class="mx-0 mt-3 mr-3" @click="submit">Contenue</v-btn>
                 <v-btn class="mx-0 mt-3" small text @click="dialog =false">Cancel</v-btn>
               </v-form>
           </v-card-text>
-         
+          
       </v-card>
     </v-dialog>
     </div>
@@ -70,7 +70,8 @@ return{
           .then((res) => {
             console.log(res);
           });
-          this.dialog=false,
+          this.$emit('add-candidate')
+         this.dialog=false,
          this.name= "",
          this.location="",
          this.description="",

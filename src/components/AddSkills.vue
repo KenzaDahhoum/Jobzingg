@@ -2,29 +2,28 @@
     <div class="Popup">
      <v-dialog max-width="600px" v-model="dialog">
          <template v-slot:activator="{on , attrs}">
-       <v-btn  color="#22c3bb" small icon v-on="on" v-bind="attrs"><v-icon>mdi-plus-circle</v-icon></v-btn>
+       <v-btn  color="#1976d2" rounded small icon v-on="on" v-bind="attrs"><v-icon>mdi-plus-circle</v-icon>Add Skills
+       </v-btn>
          </template>
        <v-card>
           <v-card-title>
-              <h2>Create Job</h2>
+              <h3>Skills</h3>
           </v-card-title>
           <v-card-text > 
               <v-form class="px-3" ref="form"> 
-                <v-text-field label="Position name"  prepend-icon="mdi-briefcase" :rules="inputRules" v-model="name"></v-text-field>
-                
-                 <v-select :items="items" label="Client" prepend-icon="mdi-bank-outline"  :rules="inputRules" v-model="client"></v-select>
-                <v-text-field label="Location"  prepend-icon="mdi-map-marker" :rules="inputRules" v-model="location"></v-text-field>
-                <v-text-field label="Headcount" prepend-icon="mdi-account-box-multiple" v-model="headacount"></v-text-field>
-                  <v-select :items="items" label="Contract Details" prepend-icon="mdi-file-document-edit"  :rules="inputRules" v-model="contract"></v-select>
-
-                <v-text-field label="Maximum Salary" prepend-icon="mdi-currency-usd" :rules="inputRules" v-model="max"></v-text-field>
-
-                <v-text-field label="Minimum Salary"  prepend-icon="mdi-currency-usd" :rules="inputRules" v-model="min"></v-text-field>
-
-                <v-textarea label="Job Description"  prepend-icon="mdi-text">
-
-               </v-textarea>
-                <v-btn color="#22c3bb" small text class="mx-0 mt-3 mr-3" @click="submit">Contenue</v-btn>
+                  <v-select :items="items" label="" prepend-icon="mdi-lightbulb-on"  :rules="inputRules" v-model="contract"></v-select> 
+                  <v-row>
+                <v-col class="pa-12">
+                        <v-range-slider :tick-labels="seasons" :value="[0, 1]" min="0"  max="3" ticks="always" tick-size="4">
+             <template v-slot:thumb-label="props">
+                <v-icon dark>
+                  {{ season(props.value) }}
+               </v-icon>
+             </template>
+            </v-range-slider>
+           </v-col>
+      </v-row>
+                <v-btn color="#1976d2" small text class="mx-0 mt-3 mr-3" @click="submit">Save</v-btn>
                  <v-btn class="mx-0 mt-3" small text @click="dialog =false">Cancel</v-btn>
               </v-form>
           </v-card-text>
@@ -40,9 +39,21 @@ export default {
     data(){
         
 return{
+  seasons: [
+        'Level 0',
+        'Level 1',
+        'Level 2',
+        'Level 3',
+      ],
+      icons: [
+        'numeric-0',
+        'numeric-1',
+        'numeric-2',
+        'numeric-3',
+      ],
   
     
- items: ['CDI', 'CDD', 'Stage'],
+ items: ['php', 'javascript', 'Sql'],
  dialog: false,
  name:"",
  client:"",
@@ -86,7 +97,9 @@ return{
          
       }
     },
-         
+      season (val) {
+        return this.icons[val]
+      },
     }
 }
 </script>

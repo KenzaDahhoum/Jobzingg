@@ -1,153 +1,45 @@
 {
   "client": [
     {
-      "id": "1",
-      "client_name": "kenza",
-      "website": "www.job.ma",
-      "location": "Rabat,Moroco",
-      "description": ""
-    },
-    {
-      "id": "2",
-      "client_name": "khalid",
-      "website": "www.dev.ma",
-      "location": "Rabat,Moroco",
-      "description": "leader"
-    },
-    {
-      "client_name": "meryem",
-      "location": "marrakeh",
-      "id": "o6Va8ad"
-    },
-    {
-      "client_name": "dalal",
+      "client_name": "clien",
       "location": "casa",
-      "id": "ba6IKcP"
-    },
-    {
-      "client_name": "kenza",
-      "location": "fes",
-      "id": "WfhtUJj"
-    },
-    {
-      "client_name": "oumaima",
-      "location": "kenitra",
-      "id": "Q79Tig0"
-    },
-    {
-      "client_name": "walid",
-      "location": "tanger",
-      "id": "LoTiwgd"
-    },
-    {
-      "client_name": "achraf",
-      "location": "lllll",
-      "id": "D9Td9hE"
-    },
-    {
-      "client_name": "achraf",
-      "location": "lllll",
-      "id": "DpgIz4U"
-    },
-    {
-      "client_name": "kkkk",
-      "location": "vvvv",
-      "id": "-6Zb9C7"
-    },
-    {
-      "client_name": "nnnnnnnn",
-      "location": "nnnnnnnnnn",
-      "id": "ppB2wm-"
-    },
-    {
-      "client_name": "mmmm",
-      "location": "llll",
-      "description": "",
-      "website": "nnn",
-      "id": "F8YKgX5"
-    },
-    {
-      "client_name": "khadija",
-      "location": "ranat",
-      "description": "",
+      "description": "desc",
       "website": "www",
-      "id": "KQSo5yq"
-    },
-    {
-      "client_name": "wwwff",
-      "location": "eee",
-      "description": "aaa",
-      "website": "fff",
-      "id": "-vy0Ti-"
+      "id": 4
     }
   ],
   "candidate": [
     {
-      "id": "1",
-      "candidate_name": "zakaria",
-      "phone_number": "065487987",
-      "email_adress": "zakaria.ab@gmail.com",
-      "location": "Casa,Moroco",
-      "description": ""
-    },
-    {
-      "candidate_name": "dalal",
-      "phone_number": "+94",
-      "location": "kenitra",
-      "email_adress": "dalal@gmail.com",
-      "description": "php",
-      "id": "3dTyHPT"
-    },
-    {
       "candidate_name": "kenza",
-      "phone_number": "+94",
-      "location": "eeee",
+      "phone_number": "+212",
+      "location": "casa",
       "email_adress": "kenza.dahhoum@gmail.com",
-      "description": "ddd",
-      "id": "IUBGdFT"
-    },
-    {
-      "candidate_name": "kenza",
-      "phone_number": "+42",
-      "location": "mmmm",
-      "email_adress": "kenzadahhoum2000@gmail.com",
       "description": "",
-      "id": "RfkmGz1"
+      "id": "XPROWMi"
     }
   ],
-  "Job": [
+  "job": [
     {
-      "id": "1",
-      "position_name": "odoo developpers",
-      "Client": "kenza",
-      "location": "Avigon,france",
-      "headacount": "2",
+      "position_name": "test4",
+      "Client": "CDD",
+      "location": "casa",
+      "headacount": "1",
       "contract_details": "CDI",
-      "Maximum_Salary": "6000 dh",
-      "Minimum_Salary": "3000 dh",
-      "Job_description": ""
-    },
-    {
-      "id": "2",
-      "position_name": "vuejs developpers",
-      "Client": "khalid",
-      "location": "france",
-      "headacount": "3",
-      "contract_details": "CDD",
-      "Maximum_Salary": "6000 dh",
-      "Minimum_Salary": "3000 dh",
-      "Job_description": ""
-    },
-    {
-      "position_name": "bbbb",
-      "Client": "Stage",
-      "location": "dddd",
-      "headacount": "4",
-      "contract_details": "CDI",
-      "Maximum_Salary": "4500",
-      "Minimum_Salary": "2500",
+      "Maximum_Salary": "65000",
+      "Minimum_Salary": "5600",
       "Job_description": "",
-      "id": "lk-pNht"
+      "id": 1
+    },
+    {
+      "position_name": "test",
+      "Client": "Stage",
+      "location": "rabat",
+      "headacount": "2",
+      "contract_details": "CDD",
+      "Maximum_Salary": "60000",
+      "Minimum_Salary": "3000",
+      "Job_description": "",
+      "id": 2
     }
   ],
   "Folders": [
@@ -160,6 +52,11 @@
       "id": "2",
       "folder_name": "fils3",
       "description": ""
+    },
+    {
+      "folder_name": "DEV",
+      "description": "nnnn",
+      "id": "HA8deDo"
     }
   ]
 }

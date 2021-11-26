@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div  class="mt-9">
     <div class="dashboard">
       <v-subheader class="d-flex justify-space-between align-center">
-        <h3>Dashboard</h3>
+        <h2>Dashboard</h2>
         <!-- <v-btn> View Order </v-btn> -->
       </v-subheader>
       <v-row>
@@ -26,6 +26,7 @@
                  </v-card-text>
                 </v-card>
               </v-col>
+              
           </v-row>
         </v-col>
         <v-col lg="5" cols="12">

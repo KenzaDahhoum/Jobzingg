@@ -1,20 +1,17 @@
 <template>
-  <v-app-bar app color="#22c3bb" elevate-on-scroll>
-    <v-app-bar-nav-icon @click="$emit('handeDrawer')"></v-app-bar-nav-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
+  <v-app-bar color="#1976d2" elevation="2" fixed class="header">
+    <v-app-bar-nav-icon  color="white" @click="$emit('handeDrawer')" class="icon"></v-app-bar-nav-icon>
+    <v-toolbar-title class="title">Title</v-toolbar-title>
     <v-spacer />
     <v-col lg="6" cols="12">
-      <v-form class="mt-5">
-        <v-text-field
-          append-icon="mdi-magnify"
-          outlined
-          dense
-          placeholder="Search"
-        />
+      <v-form class="search">
+        <v-autocomplete class="sh"
+          append-icon="mdi-magnify" dense placeholder="Search">
+        </v-autocomplete>
       </v-form>
     </v-col>
     <v-spacer />
-    <v-menu offset-y>
+    <v-menu offset-y absolute class="notif">
       <template v-slot:activator="{ on, attrs }">
         <span
           v-bind="attrs"
@@ -117,20 +114,20 @@ export default {
         {
           avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
           title: "Brunch this weekend?",
-          subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+          subtitle: `<span class="text--#1976d2">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
         },
         { divider: true, inset: true },
         {
           avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
           title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-          subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+          subtitle: `<span class="text--#1976d2 ">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
         },
         { divider: true, inset: true },
         {
           avatar: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
           title: "Oui oui",
           subtitle:
-            '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+            '<span class="text--#1976d2">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
         },
       ],
     };
@@ -139,4 +136,29 @@ export default {
 </script>
 
 <style>
+.title{
+  font-family: initial;
+  color: white;
+}
+.header{
+  display: block;
+  margin-right: 0%;
+  margin-bottom:initial;
+}
+.search{
+    display: block;
+    background-repeat: no-repeat;
+    padding: 0;
+    margin-left: 50px;
+    background-color: rgb(133, 177, 235);
+    box-sizing: inherit;
+    border-radius: 5px;
+    width: 70%;
+    position:relative;
+}
+.notif{
+  display: block;
+  background-color: aliceblue;
+}
+
 </style>
