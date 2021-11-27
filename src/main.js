@@ -5,6 +5,9 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+
+import "../src/assets/style.css";
+
 new Vue({
   vuetify,
   router,

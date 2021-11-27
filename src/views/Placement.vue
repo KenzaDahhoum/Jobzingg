@@ -1,20 +1,18 @@
 <template>
-  <div>
+  <div class="layout_content">
     <v-row class="tab">
-      <v-div class="container">
+      <v-div class="addClient">
         <v-col>
         <v-flex class="d-inline-flex"> 
           <h2 class="ml-2 mt-2"> Placements </h2>
         </v-flex>
       </v-col>
       </v-div>
-      
-      <div class="text-center">
-      <v-col>
-        <PlacementFilter class="fltr"/>
-      </v-col>
-       <v-col lg="5" cols="12" class="d-flex flex-row-reverse" >
-        <v-menu offset-y >
+      <div class="tools">
+      <v-col class="col-lg-12">
+        <div class="testetstetetetete">
+              <PlacementFilter class="fltr"/>
+                <v-menu offset-y >
       <template v-slot:activator="{ on, attrs }">
         <span  
           v-bind="attrs" v-on="on" style="cursor: pointer">
@@ -33,11 +31,12 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-     </v-menu>
+        </v-menu>
+        </div>
       </v-col>
       </div>
     </v-row>
-    <v-row>
+    <v-row class="tab">
        <v-col lg="12">
          <v-data-table
                caption="" 
@@ -90,7 +89,7 @@ export default {
 </script>
 
 <style scoped>
-.container{
+/* .container{
     max-width: 100%;
     flex: 1 1 100%;
     margin-top: auto;
@@ -109,7 +108,7 @@ export default {
   position: relative;
   widows: 70%;
   margin-right: -5%;
-}
+} */
 .text-center{
  display: inline-flex;
   flex-direction: row;

@@ -1,7 +1,7 @@
 <template>
-<v-div>
+<div class="layout_content">
   <v-row class="tab">  
-    <div class="container">
+    <div class="addClient">
       <v-col>
         <v-flex class="d-inline-flex"> 
           <h2 class="ml-2 mt-3">Activities</h2>
@@ -9,7 +9,8 @@
         </v-flex>
       </v-col>
     </div>
-    <v-col>
+    <div class="tools">
+    <v-col class="tab">
       <v-sheet height="64">
         <v-toolbar flat>
           <v-btn outlined class="mr-4" color="grey darken-2" @click="setToday">
@@ -126,8 +127,9 @@
         </v-menu>
       </v-sheet>
     </v-col>
+    </div>
   </v-row>
-</v-div>
+</div>
 </template>
 <script>
 import AddActivities from '../components/AddActivities.vue'
@@ -218,7 +220,7 @@ import AddActivities from '../components/AddActivities.vue'
   }
 </script>
 <style scoped>
-.container{
+/* .container{
   
     max-width: 100%;
     flex: 1 1 100%;
@@ -233,10 +235,16 @@ import AddActivities from '../components/AddActivities.vue'
     border-bottom: 1px solid #d4d6da;
 }
 .tab{
-margin-top:2%;
+  margin-top:2%;
   display:flex;
   position: relative;
   widows: 70%;
-  margin-right: -5%;
+  margin-right:-5%;
+  
+}. */
+.cal{
+  margin-left:-1%;
+  margin-right: 1%;
+  
 }
 </style>

@@ -1,0 +1,81 @@
+/*Custome style*/
+.theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+
+    border-right: 1px solid #eee !important;
+}
+
+tbody tr td:nth-child(01) {
+    border-left: 1px solid #eee !important;
+}
+
+.td {
+    border-right: 1px solid #d4e0f0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.row.tab {
+    margin: 0;
+}
+main.v-main {
+    margin-top: 64px;
+}
+
+.v-application .py-8 {
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.fltr{
+    margin-left: 0px !important;
+    margin-right: 0px !important ;
+}
+
+
+.addClient {
+    background: #ededed;
+    width: 100%;
+}
+
+.tools {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+.ref {
+    margin-right: 0 !important;
+}
+.testetstetetetete {
+    display: flex;
+    justify-content: end;
+}
+.Popup.fltr {
+    padding-left: 10px !important;
+    margin-right: 10px !important;
+}

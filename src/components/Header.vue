@@ -4,11 +4,10 @@
     <v-toolbar-title class="title">Title</v-toolbar-title>
     <v-spacer />
     <v-col lg="6" cols="12">
-      <v-form class="search">
-        <v-autocomplete class="sh"
-          append-icon="mdi-magnify" dense placeholder="Search">
+        <v-autocomplete class="search"
+          append-icon="mdi-magnify"  hide-no-data
+          hide-details flat dense placeholder="Search">
         </v-autocomplete>
-      </v-form>
     </v-col>
     <v-spacer />
     <v-menu offset-y absolute class="notif">
@@ -148,13 +147,15 @@ export default {
 .search{
     display: block;
     background-repeat: no-repeat;
-    padding: 0;
-    margin-left: 50px;
+    padding: 20px;
+    margin-left:20%;
     background-color: rgb(133, 177, 235);
-    box-sizing: inherit;
-    border-radius: 5px;
+    border-radius:3px;
     width: 70%;
     position:relative;
+}
+.test{
+  background: lawngreen;
 }
 .notif{
   display: block;
