@@ -39,7 +39,7 @@
               <template v-slot:activator="{ on, attrs }">
                 <span v-bind="attrs" v-on="on" style="cursor: pointer">
                   <v-btn small link color="#1976d2">
-                    <span class="sp">Actions</span>
+                    <span class="btnACt">Actions</span>
                   </v-btn>
                 </span>
               </template>
@@ -66,9 +66,33 @@
           :headers="headers"
           :items="clients"
           :items-per-page="5"
-          class="elevation-2"
+          class="elevation-1"
         >
-          <template v-slot:item.actions="{ item }">
+          <template v-slot:item="row">
+            <tr class="tr">
+              <td class="td">
+                <div class="layout">
+                  <div class="align-content">
+                    {{ row.item.client_name }}
+                  </div>
+                  <div class="cont">
+                    <div class="eye">
+                      <v-icon color="rgba(0,0,0,.87)" small> mdi-eye </v-icon>
+                      <div class="menu"><ActionClient /></div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="td"></td>
+              <td class="td"></td>
+              <td class="td">{{ row.item.location }}</td>
+              <td class="td"></td>
+              <td class="td"></td>
+              <td class="td"></td>
+              <td class="td"></td>
+            </tr>
+          </template>
+          <!-- <template v-slot:item.actions="{ item }">
             <v-row>
               <DetailsClient class="mr-1" />
               <EditClient class="mr-1" :item="item" />
@@ -77,20 +101,25 @@
                 mdi-delete
               </v-icon>
             </v-row>
-          </template>
+          </template> -->
         </v-data-table>
       </v-col>
     </v-row>
   </div>
 </template>
 <script>
-import DetailsClient from "../components/DetailsClient.vue";
+// import DetailsClient from "../components/DetailsClient.vue";
 import AddClient from "../components/AddClient.vue";
 import axios from "axios";
 import ClientFilter from "../components/ClientFilter.vue";
-import EditClient from "../components/EditClient.vue";
+//import EditClient from "../components/EditClient.vue";
+import ActionClient from "../components/ActionClient.vue";
 export default {
-  components: { AddClient, ClientFilter, EditClient, DetailsClient },
+  components: {
+    AddClient,
+    ClientFilter,
+    ActionClient,
+  },
   name: "Job",
 
   data() {
@@ -106,15 +135,14 @@ export default {
         { title: "Export", icon: "mdi-tray-arrow-down" },
       ],
       headers: [
-        { text: "Client Name", value: "client_name" },
-        { text: "Job Count", value: "" },
-        { text: "Client Industry", value: "" },
-        { text: "Client Location", value: "location" },
-        { text: "Client stage", value: "" },
-        { text: "Client Owner", value: "" },
-        { text: "Client Team", value: "" },
-        { text: "Client Adress", value: "" },
-        { text: "Actions", value: "actions", sortable: false },
+        { text: "Client Name", value: "client_name", divider: true },
+        { text: "Job Count", value: "", divider: true },
+        { text: "Client Industry", value: "", divider: true },
+        { text: "Client Location", value: "location", divider: true },
+        { text: "Client stage", value: "", divider: true },
+        { text: "Client Owner", value: "", divider: true },
+        { text: "Client Team", value: "", divider: true },
+        { text: "Client Adress", value: "", divider: true },
       ],
       clients: [],
     };
@@ -142,29 +170,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.text-center {
-  display: inline-flex;
-  flex-direction: row;
-  border: 1;
-  text-decoration: none;
-  line-height: 17px;
-  margin-left: 60%;
-  margin-right: 0%;
-  margin-block-end: 0px;
-  justify-content: end;
-}
-.sp {
-  color: #fff;
-}
-.fltr {
-  margin-left: -40%;
-  margin-right: -160%;
-}
-.ref {
-  margin-right: -150%;
-}
-.d-flex {
-  margin-right: -10%;
-}
-</style>

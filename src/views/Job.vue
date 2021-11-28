@@ -7,8 +7,8 @@
       type="success"
       :timeout="3000"
       top
-      color="success"
-    >
+      color="success">
+
       <strong> Job added </strong>successfully
       <v-icon color="success"> mdi-checkbox-marked-circle </v-icon>
     </v-snackbar>
@@ -38,7 +38,7 @@
               <template v-slot:activator="{ on, attrs }">
                 <span v-bind="attrs" v-on="on" style="cursor: pointer">
                   <v-btn small link color="#1976d2">
-                    <span class="sp">Actions</span>
+                    <span class="btnACt">Actions</span>
                   </v-btn>
                 </span>
               </template>
@@ -64,31 +64,26 @@
           caption=""
           :headers="headers"
           :items="jobs"
-          :items-per-page="5"
+          :items-per-page="10"
           class="elevation-1"
         >
           <template v-slot:item="row">
             <tr class="tr">
               <td class="td">
-                <v-div>
-                  <v-div class="layout">
-                    <v-div class="align-content">
-                      <v-div class="tool">
-                        {{ row.item.position_name }}
-                      </v-div>
-                    </v-div>
-                    <v-div class="cont">
-                      <v-div class="eye"
-                        ><v-icon color="rgba(0,0,0,.87)" small
-                          >mdi-eye</v-icon
-                        ></v-div
-                      >
-                    </v-div>
-                    <v-div class="align-act">
-                      <v-div class="menu"><ActionJob /></v-div>
-                    </v-div>
-                  </v-div>
-                </v-div>
+                  <div class="layout">
+                    <div class="align-content">
+                      {{ row.item.position_name }}
+                    </div>
+                    <div class="cont">
+                      <div class="eye">
+                        <v-icon color="rgba(0,0,0,.87)" small>
+                          mdi-eye
+                          </v-icon>
+                           <div class="menu"><ActionJob /></div>
+                      </div>
+                    </div>
+                  
+                  </div>
               </td>
               <td class="td">{{ row.item.Client }}</td>
               <td class="td">{{ row.item.loction }}</td>
@@ -209,137 +204,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.elevation-1 thead th {
-  background-color: #f0f2f8;
-}
-/* .container {
-  max-width: 100%;
-  flex: 1 1 100%;
-  margin-top: auto;
-  margin-right: auto;
-  margin-bottom: auto;
-  margin-left: 50px;
-  width: 100%;
-  margin-left: -2%;
-  padding: 0 0 !important;
-  background-color: #f1f4f8;
-  border-bottom: 1px solid #d4d6da;
-}
-.tab {
-  margin-top: 2%;
-  display: flex;
-  position: relative;
-  widows: 70%;
-  margin-right: -5%;
-} */
-.fltr {
-  margin-left: -40%;
-  margin-right: -160%;
-}
-.ref {
-  margin-right: -150%;
-}
-.sp {
-  color: #fff;
-}
-.d-flex {
-  margin-right: -10%;
-}
-.layout {
-  flex-wrap: wrap;
-  flex-direction: row;
-  display: flex;
-  flex: 1 1 auto;
-  min-width: 0;
-  background-repeat: no-repeat;
-  padding: 0;
-  margin: 0;
-}
-.align-content {
-  width: calc(100% - 76px);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  align-content: center;
-}
-.tool {
-  display: initial;
-  background-repeat: no-repeat;
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit;
-}
-.cont {
-  width: 26px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  align-content: center;
-  flex: 1 1 auto;
-}
-.tr:nth-of-type(even) {
-  background-color: #f1f4f8;
-}
-.td {
-  /* border-right: 1px solid #d4e0f0; */
-}
-/* 
-.theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:not(:last-child) > td:not(.v-data-table__mobile-row), 
-.theme--light.v-data-table > .v-data-table__wrapper > table > tbody > tr:not(:last-child) > th:not(.v-data-table__mobile-row) {
-    border-right: 1px solid #d4e0f0;;
-}
-tbody tr:nth-child(01) td {
-    border-right: 1px solid blue;
-} */
-
-.eye {
-  background: transparent;
-  box-shadow: none !important;
-  border-radius: 50%;
-  justify-content: center;
-  min-width: 0;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: transparent !important;
-  font-size: 13px;
-  height: 28px;
-  display: inline-flex;
-  flex: 0 1 auto;
-  position: relative;
-  margin-left: 50px;
-  margin-right: -20px;
-}
-.align-act {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  align-content: center;
-  flex: 1 1 auto;
-  background-repeat: no-repeat;
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit;
-}
-.menu {
-  display: grid;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  padding: 0;
-  margin-left: 120%;
-  box-sizing: inherit;
-  align-items: center;
-  cursor: pointer;
-  height: inherit;
-  position: relative;
-  width: 28px;
-  color: rgba(0, 0, 0, 0.87);
-}
-.text-center {
-  display: flex;
-  flex-direction: row;
-  border: 1;
-  text-decoration: none;
-  line-height: 17px;
-  margin-left: 60%;
-  margin-right: 0%;
-  justify-content: end;
-}
-</style>

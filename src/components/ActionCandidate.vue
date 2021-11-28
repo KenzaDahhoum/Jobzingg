@@ -31,9 +31,9 @@
       </v-col>
 </template>
 <script>
-import EditJob from './EditJob.vue'
+import EditCandidate from './EditCandidate.vue'
 export default {
-    components:[EditJob],
+    components:[EditCandidate],
     data(){
         return{
       

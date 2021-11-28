@@ -22,12 +22,18 @@
               @add-candidate="addcandidate"
               @candidateAdded="snackbar = true"
             />
+            
+          
           </v-flex>
         </v-col>
       </div>
-      <div class="menuInfo">
-        <MenuCandidate />
+      <div class="link">
+         <div class="menuInfo">
+         <LinkCandidate class="tocan"/>
+         <LinkFolder class="tofol"/>
       </div>
+      </div>
+      
       <div class="tools">
         <v-col class="col-lg-12">
           <div class="testetstetetetete">
@@ -39,7 +45,7 @@
             <template v-slot:activator="{ on, attrs }">
               <span v-bind="attrs" v-on="on" style="cursor: pointer">
                 <v-btn small link color="#1976d2">
-                  <span class="sp">Actions</span>
+                  <span class="btnACt">Actions</span>
                 </v-btn>
               </span>
             </template>
@@ -64,10 +70,35 @@
           caption=""
           :headers="headers"
           :items="candidate"
-          :items-per-page="5"
-          class="elevation-5"
+          :items-per-page="10"
+          class="elevation-1"
         >
-          <v-dialog v-model="dialogDelete" max-width="500px">
+         <template v-slot:item="row">
+            <tr class="tr">
+              <td class="td">
+                <div class="layout">
+                  <div class="align-content">
+                    {{ row.item.candidate_name }}
+                  </div>
+                  <div class="cont">
+                    <div class="eye">
+                      <v-icon color="rgba(0,0,0,.87)" small> mdi-eye </v-icon>
+                      <div class="menu"><ActionCandidate /></div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="td"></td>
+              <td class="td">{{ row.item.location }}</td>
+              <td class="td"></td>
+              <td class="td"></td>
+              <td class="td"></td>
+              <td class="td"></td>
+              <td class="td"></td>
+              <td class="td"></td>
+            </tr>
+          </template>
+          <!-- <v-dialog v-model="dialogDelete" max-width="500px">
             <v-card>
               <v-card-title class="text-h5"
                 >Are you sure you want to delete this item?</v-card-title
@@ -93,27 +124,30 @@
                 mdi-delete
               </v-icon>
             </v-row>
-          </template>
+          </template> -->
         </v-data-table>
+       
       </v-col>
     </v-row>
   </div>
 </template>
 <script>
-import "../assets/style.css";
 import AddCandidate from "../components/AddCandidate.vue";
 import CandidateFilter from "../components/CandidateFilter.vue";
-import EditCandidate from "../components/EditCandidate.vue";
+//import EditCandidate from "../components/EditCandidate.vue";
 import axios from "axios";
-import DetailsCandidate from "../components/DetailsCandidate.vue";
-import MenuCandidate from "../components/MenuCandidate.vue";
+import LinkCandidate from '../components/LinkCandidate.vue'
+//import DetailsCandidate from "../components/DetailsCandidate.vue";
+import LinkFolder from "../components/LinkFolder.vue";
+import ActionCandidate from '../components/ActionCandidate.vue';
 export default {
   components: {
     AddCandidate,
     CandidateFilter,
-    EditCandidate,
-    DetailsCandidate,
-    MenuCandidate,
+     LinkFolder,
+    ActionCandidate,
+    LinkCandidate,
+    
   },
 
   name: "Job",
@@ -126,16 +160,15 @@ export default {
         { title: "Export", icon: "mdi-tray-arrow-down" },
       ],
       headers: [
-        { text: "Candidate Name", value: "candidate_name" },
-        { text: "Candidate Reference", value: "" },
-        { text: "Candidate Location", value: "location" },
-        { text: "Current position", value: "" },
-        { text: "Current Company", value: "" },
-        { text: "Notice Period", value: "" },
-        { text: "Current Salary", value: "" },
-        { text: "Expected Salary", value: "" },
-        { text: "Candidate Owner", value: "" },
-        { text: "Actions", value: "actions", sortable: false },
+        { text: "Candidate Name", value: "candidate_name" , divider:true},
+        { text: "Candidate Reference", value: "" , divider:true},
+        { text: "Candidate Location", value: "location" , divider:true },
+        { text: "Current position", value: "" , divider:true },
+        { text: "Current Company", value: "" , divider:true },
+        { text: "Notice Period", value: "" , divider:true},
+        { text: "Current Salary", value: "" , divider:true},
+        { text: "Expected Salary", value: "" , divider:true},
+        { text: "Candidate Owner", value: "" , divider:true},
       ],
       candidate: [],
     };
@@ -163,32 +196,16 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-.text-center {
-  display: flex;
-  flex-direction: row;
-  border: 1;
-  text-decoration: none;
-  line-height: 17px;
-  margin-left: 60%;
-  margin-right: -20%;
-  margin-top: 0%;
-  justify-content: end;
+.link{ 
+    width: 100%;
 }
-/* .fltr{
-  margin-left:-40% ;
-  margin-right: -160%;
+.tocan{
+    padding-left: 8px !important;
+    margin-right: 0% !important;
 }
-.ref{
-  margin-right: -150%;
-  
+.tofol{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
-.d-flex{
-  margin-right: -10%;
-}
-
-.sp{
-  color:#fff
-} */
 </style>

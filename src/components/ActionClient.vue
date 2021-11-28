@@ -31,9 +31,9 @@
       </v-col>
 </template>
 <script>
-import EditJob from './EditJob.vue'
+import EditClient from './EditJob.vue'
 export default {
-    components:[EditJob],
+    components:[EditClient],
     data(){
         return{
       

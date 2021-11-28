@@ -220,28 +220,6 @@ import AddActivities from '../components/AddActivities.vue'
   }
 </script>
 <style scoped>
-/* .container{
-  
-    max-width: 100%;
-    flex: 1 1 100%;
-    margin-top: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: 50px;
-    width: 100%;
-    margin-left: -2%;
-    padding: 0 0 !important;
-    background-color:#f1f4f8;
-    border-bottom: 1px solid #d4d6da;
-}
-.tab{
-  margin-top:2%;
-  display:flex;
-  position: relative;
-  widows: 70%;
-  margin-right:-5%;
-  
-}. */
 .cal{
   margin-left:-1%;
   margin-right: 1%;

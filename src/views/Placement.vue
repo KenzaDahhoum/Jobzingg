@@ -68,11 +68,11 @@ export default {
       ],
 
       headers: [
-        { text: "Candidate name", value: "candidate_name" },
-        { text: "Position name", value: "position_name" },
-        { text: "Client name", value: "Client" },
-        { text: "Type Contract", value: "" },
-        { text: "Contract Duration", value: "" },
+        { text: "Candidate name", value: "candidate_name", divider:true },
+        { text: "Position name", value: "position_name" , divider:true},
+        { text: "Client name", value: "Client" , divider:true},
+        { text: "Type Contract", value: "" , divider:true},
+        { text: "Contract Duration", value: "" , divider:true},
        
       ],
       Placements: [],
@@ -88,47 +88,3 @@ export default {
 };
 </script>
 
-<style scoped>
-/* .container{
-    max-width: 100%;
-    flex: 1 1 100%;
-    margin-top: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: 50px;
-    width: 100%;
-    margin-left: -2%;
-    padding: 0 0 !important;
-    background-color:#f1f4f8;
-    border-bottom: 1px solid #d4d6da;
-}
-.tab{
-   margin-top:2%;
-  display:flex;
-  position: relative;
-  widows: 70%;
-  margin-right: -5%;
-} */
-.text-center{
- display: inline-flex;
-  flex-direction: row;
-  border: 1;
-  text-decoration: none;
-  line-height: 17px;
-  margin-left: 60%;
-  margin-right: 0%;
- justify-content: end;
-}
-.fltr{
-   margin-left:239% ;
-  
-}
-.sp{
-  color: #fff;
-}
-.d-flex {
-  margin-left: 160px;
-}
-
-
-</style>
