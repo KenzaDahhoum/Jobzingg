@@ -3,6 +3,7 @@
 thead.v-data-table-header {
     background-color: #f1f4f8;
 }
+
 /* border divider */
 .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
 
@@ -16,83 +17,115 @@ tbody tr td:nth-child(01) {
 .td {
     border-right: 1px solid #f1f4f8 !important;
 }
+
 .tr:nth-of-type(even) {
     background-color: #f1f4f8;
 }
-  /*align content*/
-  .align-content {
+
+/*align content*/
+.align-content {
     width: calc(100% - 76px);
     display: grid;
     align-content: center;
-  }
+}
+
 /* span color action btn */
 .btnACt {
     color: #fff;
 }
+
 /* margin datatable */
 .row.tab {
     margin: 0;
 }
+
 /*  show div main ( margin subheader)*/
 main.v-main {
     margin-top: 64px;
 }
+
 /*mesures div main   */
 .v-application .py-8 {
     padding-top: 0px !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
+
 /*link to folder*/
-.menuInfo{
+.menuInfo {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    border-bottom: 1px solid #eee; 
+    border-bottom: 1px solid #eee;
     padding: 0px !important;
 }
+
 /* bg color div main */
 .addClient {
     background: #f1f4f8;
     width: 100%;
 }
+
 /* margin filter btn */
-.fltr{
+.fltr {
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
+
 /*margin refresh btn*/
 .ref {
     margin-right: 0 !important;
 }
+
 /* direction btns */
 .tools {
     width: 100%;
     /* border-bottom: 1px solid #eee; */
 }
+
 /* flex btns*/
 .testetstetetetete {
     display: flex;
     justify-content: end;
 }
+
 /*space between btns*/
 .Popup.fltr {
     padding-left: 8px !important;
     margin-right: 8px !important;
 }
+
 /* details + actions */
-.layout{
+.layout {
     width: 100%;
 }
+
 .cont {
     display: flex;
     justify-content: end;
- 
+
 }
+
 .eye {
     display: inline-flex;
     padding-left: 100px !important;
 }
-  .menu{
+
+.menu {
     margin-left: 70%;
-  }
+}
+
+.theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: transparent !important;
+}
+
+
+
+.button_action_header{
+
+}
+
+
+.button_action_header i {
+    margin-right: 5px;
+}
