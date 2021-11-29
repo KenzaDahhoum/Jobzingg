@@ -22,8 +22,8 @@
               @add-candidate="addcandidate"
               @candidateAdded="snackbar = true"
             />
-            
-          
+
+
           </v-flex>
         </v-col>
       </div>
@@ -31,15 +31,15 @@
          <div class="menuInfo">
          <LinkCandidate class="tocan"/>
          <LinkFolder class="tofol"/>
+        </div>
       </div>
-      </div>
-      
+
       <div class="tools">
         <v-col class="col-lg-12">
           <div class="testetstetetetete">
             <v-btn small class="ref" outlined color="#1976d2"
             ><v-icon small>mdi-refresh</v-icon>Refresh</v-btn>
-         
+
           <CandidateFilter class="fltr" />
             <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
@@ -64,7 +64,7 @@
         </v-col>
       </div>
     </v-row>
-    <v-row class="tab"> 
+    <v-row class="tab">
       <v-col lg="12">
         <v-data-table
           caption=""
@@ -82,8 +82,10 @@
                   </div>
                   <div class="cont">
                     <div class="eye">
-                      <v-icon color="rgba(0,0,0,.87)" small> mdi-eye </v-icon>
-                      <div class="menu"><ActionCandidate /></div>
+                      <!-- <DetailsCandidate/> -->
+                      <Modal/>
+                      <!-- <v-icon color="rgba(0,0,0,.87)" small> mdi-eye </v-icon> -->
+                      <div class="menu"><ActionCandidate :item="item"/></div>
                     </div>
                   </div>
                 </div>
@@ -126,7 +128,7 @@
             </v-row>
           </template> -->
         </v-data-table>
-       
+
       </v-col>
     </v-row>
   </div>
@@ -140,6 +142,8 @@ import LinkCandidate from '../components/LinkCandidate.vue'
 //import DetailsCandidate from "../components/DetailsCandidate.vue";
 import LinkFolder from "../components/LinkFolder.vue";
 import ActionCandidate from '../components/ActionCandidate.vue';
+//import DetailsCandidate from '../components/DetailsCandidate.vue';
+import Modal from '../components/Modal.vue';
 export default {
   components: {
     AddCandidate,
@@ -147,7 +151,9 @@ export default {
      LinkFolder,
     ActionCandidate,
     LinkCandidate,
-    
+    // DetailsCandidate,
+    Modal,
+
   },
 
   name: "Job",
@@ -197,7 +203,7 @@ export default {
 };
 </script>
 <style scoped>
-.link{ 
+.link{
     width: 100%;
 }
 .tocan{
